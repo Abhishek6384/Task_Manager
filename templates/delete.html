@@ -1,0 +1,48 @@
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<style>
+
+	body{
+		background-color: #638CB8;
+	}
+
+    #submit_btn{
+		background-color: #e86b95;
+	}
+
+    .center-column{
+		width:600px;
+		margin: 20px auto;
+		padding:20px;
+		background-color: #fff;
+		border-radius: 3px;
+		box-shadow: 6px 2px 30px 0px rgba(0,0,0,0.75);
+	}
+	
+    .item-row{
+		background-color: #906abd;
+		margin: 10px;
+		padding: 20px;
+		border-radius: 3px;
+		color: #fff;
+		font-size: 16px;
+		box-shadow: 0px -1px 10px -4px rgba(0,0,0,0.75);
+	}
+
+</style>
+
+
+
+<div class="center-column">
+    <p> Are you sure you want to delete "{{item}}" ?</p>
+    <div class="item-row">
+        <a href="{%  url 'list' %}" class=" btn btn-sm  btn-danger" >Cancel </a>
+        <br>
+
+        <form action=""method="POST">
+            {% csrf_token%}
+            <input type="submit" name="Delete"   class="btn btn-sm btn-info" id="submit_btn" name="confirm">
+        </form>
+    </div>
+</div>
